@@ -52,14 +52,11 @@ metadata:
   labels:
     run: products
 spec:
-  # type: NodePort
+  type: NodePort
   ports:
-  - port: 8081
-    targetPort: 4000
-    protocol: TCP
-    name: http
-  # - port: 443
-  #   protocol: TCP
-  #   name: https
+  - nodePort: 30163
+      port: 8081 
+      targetPort: 4000
+
   selector:
-    run: products
+    app: products
